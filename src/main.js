@@ -1,3 +1,12 @@
+/*!
+* inView.js 1.1
+*
+* Copyright 2019, Mario Duarte http://marioduarte.co.uk
+* Released under the GLP-2.0 license
+*
+* Date: Mon Feb 11 2019
+*/
+
 $.fn.inView = function(inViewType, offset = 0){
 
 		// Calculates the viewport top and bottom position
