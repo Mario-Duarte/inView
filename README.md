@@ -1,11 +1,22 @@
 # inView
 
-Simple and small jQuery plugin to detect when DOM elements are in view in the viewport, less than 500bytes!
+Simple, small and minimal jQuery plugin to check when DOM elements are in view in the viewport, best of all its less than 500bytes!!!
+
+- Requires: jQuery 1.8+
+- Based on Protonet [jquery.inview](https://github.com/protonet/jquery.inview)
+
+#### Quick Navigation:
+- [How it works](#how-it-works)
+- [Usage](#usage)
+- [Basic Usage](#basic-usage)
+- [Advanced Usage](#advanced-usage)
+- [Other plugins](#other-plugins)
+
 
 ## How it Works
 inView returns `true` or `false` on call instead of binding to an event, why you may wonder....
 
-I wanted a dead simple plugin that does what says in the tin and does not get in the way with unnecessary code.
+I wanted a dead simple plugin that I could reuse on my projects that does what says in the tin and does not get in the way with unnecessary code or events running in the background.
 
 ## Usage
 
@@ -13,9 +24,19 @@ I wanted a dead simple plugin that does what says in the tin and does not get in
 let isInView = $('elm').inView('both');
 ```
 
-This is the simplest way of using this plugin, the code above should only return true if both the top and bottom of the element are within the viewport.
+This is the simplest way of using this plugin, the code above should return true if both the top and bottom of the element are within the viewport.
+
+```(javascript)
+$('elm').inView(inViewType, offset);
+```
+
+__inViewType__ can be `topOnly`, `bottomOnly` or `both` and they respectively return true when the top, bottom or both parts of the element is in view in the viewport.
+
+__offset__, an integer that can help you detect viewport 'proximity' if the integer is positive and 'delay' if negative.
 
 You can check if an element is in view on __scroll__, __click__, __resize__, __load__ events with ease.
+
+### Basic Usage
 
 Here is a simple usage with the jQuery .ready():
 
@@ -35,7 +56,14 @@ Here is a simple usage with the jQuery .ready():
 
 ```
 
-And a more advance usage with a scroll event:
+### Advanced Usage
+
+This plugin allows you to pass in the offset in px as follows:
+
+```(javascript)
+let isInView = $('elm').inView('bottomOnly', 100);
+```
+The above will return true when the bottom bounds of the element and an offset of 100px are in the viewport, here's a more advance usage with a scroll event and offset:
 
 ```(javascript)
 
@@ -45,7 +73,7 @@ And a more advance usage with a scroll event:
 			var elm = $('elm');
 
 			elm.each(()=>{
-				if ($(this).inView("both")) {
+				if ($(this).inView("topOnly", 50)) {
 					$(this).addClass("visible");
 				} else {
 					$(this).removeClass("visible");
@@ -64,7 +92,10 @@ And a more advance usage with a scroll event:
 
 ```
 
-## Other like plugins
+## Other plugins
+
+There are a few other plugins that do very similar things to this one that you may want to have a look at:
 
 - Event driven inView by protonet - [jquery.inview](https://github.com/protonet/jquery.inview)
 - Bindable inview event by Zuk - [jquery.inview](https://github.com/zuk/jquery.inview/)
+- Get notifyed when a DOM element enters or exits the viewport by camiegert - [in-view](https://github.com/camwiegert/in-view)
