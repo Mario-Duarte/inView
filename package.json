@@ -1,0 +1,29 @@
+{
+  "name": "inView-pugin",
+  "version": "1.0.0",
+  "main": "Gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mario-Duarte/inView"
+  },
+  "bugs": {
+    "url": "https://github.com/Mario-Duarte/inView/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.1",
+    "gulp-util": "^3.0.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mario Duarte",
+  "license": "GPL",
+  "description": "jQuery plugin to detect when DOM elements are in view in the viewport"
+}
