@@ -2,9 +2,12 @@
 
 $.fn.inView = function (inViewType) {
   var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  // Calculates the viewport top and bottom position
+  //  at the time of the call
   var viewport = {};
   viewport.top = $(window).scrollTop();
-  viewport.bottom = viewport.top + $(window).height();
+  viewport.bottom = viewport.top + $(window).height(); // Calculate element bouds positions
+
   var bounds = {};
   bounds.top = this.offset().top + offset;
   bounds.bottom = bounds.top + this.outerHeight();

@@ -1,11 +1,16 @@
 $.fn.inView = function(inViewType, offset = 0){
 
+		// Calculates the viewport top and bottom position
+		//  at the time of the call
 		var viewport = {};
 		viewport.top = $(window).scrollTop();
 		viewport.bottom = viewport.top + $(window).height();
+
+		// Calculate element bouds positions
 		var bounds = {};
 		bounds.top = this.offset().top + offset;
 		bounds.bottom = bounds.top + this.outerHeight();
+
 		switch(inViewType){
 			case 'bottomOnly':
 				return ((bounds.bottom <= viewport.bottom) && (bounds.bottom >= viewport.top));
@@ -16,4 +21,5 @@ $.fn.inView = function(inViewType, offset = 0){
 			default:
 				return ((bounds.top >= viewport.top) && (bounds.bottom <= viewport.bottom));
 		}
+
 };
