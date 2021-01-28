@@ -2,6 +2,8 @@
 
 Simple, small and minimal jQuery plugin to check when DOM elements are in view in the viewport, best of all its less than 500bytes!!!
 
+<a href="https://www.buymeacoffee.com/marioduarte"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a Coffee&emoji=&slug=marioduarte&button_colour=FF5F5F&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00"></a><br/>
+
 - Requires: jQuery 1.8+
 - Based on Protonet [jquery.inview](https://github.com/protonet/jquery.inview)
 
